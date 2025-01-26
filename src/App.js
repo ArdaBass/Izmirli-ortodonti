@@ -24,7 +24,6 @@ function App() {
   const [result1, setResult1] = useState("-");
   const [result2, setResult2] = useState("-");
   const [rolling, setRolling] = useState(false);
-  const [animateFish, setAnimateFish] = useState(false);
 
   // Play sound on page load
   useEffect(() => {
@@ -38,7 +37,6 @@ function App() {
 
   const rollDice = () => {
     setRolling(true);
-    setAnimateFish(true); // Start fish animation
     let rollingInterval;
 
     // Display random sides during the rolling animation
@@ -60,11 +58,6 @@ function App() {
       setResult1(finalResult1);
       setResult2(finalResult2);
       setRolling(false);
-
-      // Stop fish animation after 5 seconds
-      setTimeout(() => {
-        setAnimateFish(false);
-      }, 5000);
     }, 1000); // Rolling duration
   };
 
@@ -128,12 +121,12 @@ function App() {
         <img
           src="/fish.jpg" // Fish image file in the public folder
           alt="Fish"
-          className={`fish left-to-right ${animateFish ? "animate" : ""}`}
+          className="fish left-to-right"
         />
         <img
           src="/fish.jpg" // Fish image file in the public folder
           alt="Fish"
-          className={`fish right-to-left ${animateFish ? "animate" : ""}`}
+          className="fish right-to-left"
         />
       </div>
     </div>
