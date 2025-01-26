@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -24,6 +24,14 @@ function App() {
   const [result1, setResult1] = useState("-");
   const [result2, setResult2] = useState("-");
   const [rolling, setRolling] = useState(false);
+
+  // Play sound on page load
+  useEffect(() => {
+    const audio = new Audio("/background-music.mp3"); // Replace with your file name
+    audio.play().catch((error) => {
+      console.log("Autoplay prevented: ", error);
+    });
+  }, []); // Runs only once when the component is mounted
 
   const rollDice = () => {
     setRolling(true);
@@ -58,15 +66,15 @@ function App() {
         <div
           className={`dice ${rolling ? "rolling" : ""}`}
           style={{
-            width: "120px", // Increased by 50%
-            height: "120px", // Increased by 50%
+            width: "120px",
+            height: "120px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "24px", // Increased by 50%
+            fontSize: "36px",
             fontWeight: "bold",
-            border: "3px solid black", // Slightly thicker border for balance
-            borderRadius: "15px", // Adjusted for larger size
+            border: "3px solid black",
+            borderRadius: "15px",
             backgroundColor: "#f0f0f0",
           }}
         >
@@ -75,15 +83,15 @@ function App() {
         <div
           className={`dice ${rolling ? "rolling" : ""}`}
           style={{
-            width: "120px", // Increased by 50%
-            height: "120px", // Increased by 50%
+            width: "120px",
+            height: "120px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "24px", // Increased by 50%
+            fontSize: "36px",
             fontWeight: "bold",
-            border: "3px solid black", // Slightly thicker border for balance
-            borderRadius: "15px", // Adjusted for larger size
+            border: "3px solid black",
+            borderRadius: "15px",
             backgroundColor: "#f0f0f0",
           }}
         >
@@ -94,7 +102,7 @@ function App() {
         onClick={rollDice}
         style={{
           marginTop: "20px",
-          padding: "15px 30px", // Slightly larger button
+          padding: "15px 30px",
           fontSize: "18px",
           cursor: rolling ? "not-allowed" : "pointer",
           backgroundColor: rolling ? "#ccc" : "#007bff",
