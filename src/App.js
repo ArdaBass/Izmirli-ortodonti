@@ -3,8 +3,24 @@ import "./App.css";
 
 function App() {
   // Hardcoded dice sides
-  const dice1Sides = ["A", "B", "C", "D", "E", "F"]; // Custom sides for Dice 1
-  const dice2Sides = ["1", "2", "3", "4", "5", "6"]; // Custom sides for Dice 2
+  const dice1Sides = [
+  "Missionary",
+  "Doggy Style",
+  "Cowgirl",
+  "Reverse Cowgirl",
+  "Spooning",
+  "Standing"
+]; // Custom sides for Dice 1 (positions)
+
+const dice2Sides = [
+  "Bedroom",
+  "Bathroom",
+  "Kitchen",
+  "Living Room",
+  "Balcony",
+  "Car"
+]; // Custom sides for Dice 2 (places)
+
   const [result1, setResult1] = useState("-");
   const [result2, setResult2] = useState("-");
   const [rolling, setRolling] = useState(false);
@@ -37,7 +53,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Dice Simulator</h1>
+      <h1>Gamzeyle Trabzona Hediye</h1>
       <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
         <div
           className={`dice ${rolling ? "rolling" : ""}`}
