@@ -125,8 +125,16 @@ function App() {
       </button>
       <div className="fish-container">
         {/* Fish elements */}
-        <div className={`fish left-to-right ${animateFish ? "animate" : ""}`}></div>
-        <div className={`fish right-to-left ${animateFish ? "animate" : ""}`}></div>
+        <img
+          src="/fish.jpg" // Fish image file in the public folder
+          alt="Fish"
+          className={`fish left-to-right ${animateFish ? "animate" : ""}`}
+        />
+        <img
+          src="/fish.jpg" // Fish image file in the public folder
+          alt="Fish"
+          className={`fish right-to-left ${animateFish ? "animate" : ""}`}
+        />
       </div>
     </div>
   );
