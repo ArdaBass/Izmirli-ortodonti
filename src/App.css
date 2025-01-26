@@ -38,3 +38,77 @@
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+.fish-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.fish {
+  width: 50px;
+  height: 30px;
+  background-color: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fish::before,
+.fish::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.fish::before {
+  top: -10px;
+  left: 15px;
+}
+
+.fish::after {
+  top: 10px;
+  left: 15px;
+}
+
+/* Left-to-right animation */
+.left-to-right {
+  left: -60px;
+}
+
+.left-to-right.animate {
+  animation: moveLeftToRight 5s infinite;
+}
+
+/* Right-to-left animation */
+.right-to-left {
+  right: -60px;
+}
+
+.right-to-left.animate {
+  animation: moveRightToLeft 5s infinite;
+}
+
+/* Keyframes for left-to-right */
+@keyframes moveLeftToRight {
+  0% {
+    left: -60px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+/* Keyframes for right-to-left */
+@keyframes moveRightToLeft {
+  0% {
+    right: -60px;
+  }
+  100% {
+    right: 100vw;
+  }
+}
