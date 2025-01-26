@@ -63,7 +63,7 @@ function App() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "36px", // Increased by 50%
+            fontSize: "24px", // Increased by 50%
             fontWeight: "bold",
             border: "3px solid black", // Slightly thicker border for balance
             borderRadius: "15px", // Adjusted for larger size
@@ -80,7 +80,7 @@ function App() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "36px", // Increased by 50%
+            fontSize: "24px", // Increased by 50%
             fontWeight: "bold",
             border: "3px solid black", // Slightly thicker border for balance
             borderRadius: "15px", // Adjusted for larger size
