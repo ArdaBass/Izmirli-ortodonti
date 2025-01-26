@@ -4,22 +4,22 @@ import "./App.css";
 function App() {
   // Hardcoded dice sides
   const dice1Sides = [
-  "Missionary",
-  "Doggy Style",
-  "Cowgirl",
-  "Reverse Cowgirl",
-  "Spooning",
-  "Standing"
-]; // Custom sides for Dice 1 (positions)
+    "Missionary",
+    "Doggy Style",
+    "Cowgirl",
+    "Reverse Cowgirl",
+    "Spooning",
+    "Standing",
+  ]; // Custom sides for Dice 1 (positions)
 
-const dice2Sides = [
-  "Bedroom",
-  "Bathroom",
-  "Kitchen",
-  "Living Room",
-  "Balcony",
-  "Car"
-]; // Custom sides for Dice 2 (places)
+  const dice2Sides = [
+    "Bedroom",
+    "Bathroom",
+    "Kitchen",
+    "Living Room",
+    "Balcony",
+    "Car",
+  ]; // Custom sides for Dice 2 (places)
 
   const [result1, setResult1] = useState("-");
   const [result2, setResult2] = useState("-");
@@ -54,19 +54,19 @@ const dice2Sides = [
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
       <h1>Gamzeyle Trabzona Hediye</h1>
-      <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+      <div style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
         <div
           className={`dice ${rolling ? "rolling" : ""}`}
           style={{
-            width: "80px",
-            height: "80px",
+            width: "120px", // Increased by 50%
+            height: "120px", // Increased by 50%
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "24px",
+            fontSize: "36px", // Increased by 50%
             fontWeight: "bold",
-            border: "2px solid black",
-            borderRadius: "10px",
+            border: "3px solid black", // Slightly thicker border for balance
+            borderRadius: "15px", // Adjusted for larger size
             backgroundColor: "#f0f0f0",
           }}
         >
@@ -75,15 +75,15 @@ const dice2Sides = [
         <div
           className={`dice ${rolling ? "rolling" : ""}`}
           style={{
-            width: "80px",
-            height: "80px",
+            width: "120px", // Increased by 50%
+            height: "120px", // Increased by 50%
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "24px",
+            fontSize: "36px", // Increased by 50%
             fontWeight: "bold",
-            border: "2px solid black",
-            borderRadius: "10px",
+            border: "3px solid black", // Slightly thicker border for balance
+            borderRadius: "15px", // Adjusted for larger size
             backgroundColor: "#f0f0f0",
           }}
         >
@@ -94,8 +94,8 @@ const dice2Sides = [
         onClick={rollDice}
         style={{
           marginTop: "20px",
-          padding: "10px 20px",
-          fontSize: "16px",
+          padding: "15px 30px", // Slightly larger button
+          fontSize: "18px",
           cursor: rolling ? "not-allowed" : "pointer",
           backgroundColor: rolling ? "#ccc" : "#007bff",
           color: "#fff",
