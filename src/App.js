@@ -27,11 +27,14 @@ function App() {
 
   // Play sound on page load
   useEffect(() => {
-    const audio = new Audio("/background-music.mp3"); // Replace with your file name
-    audio.play().catch((error) => {
-      console.log("Autoplay prevented: ", error);
-    });
-  }, []); // Runs only once when the component is mounted
+  const audio = new Audio("/background-music.mp3");
+  const playAudio = () => {
+    audio.play().catch((error) => console.log("Audio blocked:", error));
+  };
+  document.addEventListener("click", playAudio, { once: true });
+  return () => document.removeEventListener("click", playAudio);
+}, []);
+
 
   const rollDice = () => {
     setRolling(true);
