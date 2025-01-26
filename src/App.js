@@ -24,20 +24,21 @@ function App() {
   const [result1, setResult1] = useState("-");
   const [result2, setResult2] = useState("-");
   const [rolling, setRolling] = useState(false);
+  const [animateFish, setAnimateFish] = useState(false);
 
   // Play sound on page load
   useEffect(() => {
-  const audio = new Audio("/background-music.mp3");
-  const playAudio = () => {
-    audio.play().catch((error) => console.log("Audio blocked:", error));
-  };
-  document.addEventListener("click", playAudio, { once: true });
-  return () => document.removeEventListener("click", playAudio);
-}, []);
-
+    const audio = new Audio("/background-music.mp3");
+    const playAudio = () => {
+      audio.play().catch((error) => console.log("Audio blocked:", error));
+    };
+    document.addEventListener("click", playAudio, { once: true });
+    return () => document.removeEventListener("click", playAudio);
+  }, []);
 
   const rollDice = () => {
     setRolling(true);
+    setAnimateFish(true); // Start fish animation
     let rollingInterval;
 
     // Display random sides during the rolling animation
@@ -59,11 +60,16 @@ function App() {
       setResult1(finalResult1);
       setResult2(finalResult2);
       setRolling(false);
+
+      // Stop fish animation after 5 seconds
+      setTimeout(() => {
+        setAnimateFish(false);
+      }, 5000);
     }, 1000); // Rolling duration
   };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
+    <div style={{ padding: "20px", textAlign: "center", position: "relative" }}>
       <h1>Gamzeyle Trabzona Hediye</h1>
       <div style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
         <div
@@ -117,6 +123,11 @@ function App() {
       >
         {rolling ? "Rolling..." : "Roll Dice"}
       </button>
+      <div className="fish-container">
+        {/* Fish elements */}
+        <div className={`fish left-to-right ${animateFish ? "animate" : ""}`}></div>
+        <div className={`fish right-to-left ${animateFish ? "animate" : ""}`}></div>
+      </div>
     </div>
   );
 }
