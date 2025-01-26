@@ -47,29 +47,27 @@
 }
 
 .fish {
-  width: 80px; /* Adjusted size for the fish image */
+  width: 80px; /* Adjust size of the fish */
   height: auto; /* Maintain aspect ratio */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-/* Left-to-right animation */
+/* Mirroring the left-to-right fish */
 .left-to-right {
   left: -100px;
+  transform: translateY(-50%) scaleX(-1); /* Flip horizontally */
 }
 
-.left-to-right.animate {
-  animation: moveLeftToRight 5s linear infinite;
+.left-to-right {
+  animation: moveLeftToRight 6s linear infinite;
 }
 
 /* Right-to-left animation */
 .right-to-left {
   right: -100px;
-}
-
-.right-to-left.animate {
-  animation: moveRightToLeft 5s linear infinite;
+  animation: moveRightToLeft 6s linear infinite;
 }
 
 /* Keyframes for left-to-right */
