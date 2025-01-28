@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px", textAlign: "center", position: "relative" }}>
-      <h1>Gamzeyle Trabzona Hediye</h1>
+      <h1>Berke anca Standing</h1>
       <div style={{ display: "flex", justifyContent: "center", gap: "30px" }}>
         <div
           className={`dice ${rolling ? "rolling" : ""}`}
