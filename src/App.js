@@ -91,7 +91,7 @@ function App() {
         <img src="/fish.jpg" alt="Fish" className="fish right-to-left" />
       </div>
       <div style={countdownStyle}>
-        Countdown to 2028: <span style={countdownTextStyle}>{timeLeft}</span>
+         <span style={countdownTextStyle}>{timeLeft}</span>
       </div>
     </div>
   );
