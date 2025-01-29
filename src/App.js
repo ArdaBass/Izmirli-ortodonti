@@ -47,14 +47,14 @@ function App() {
     const now = new Date().getTime();
     const difference = targetDate - now;
 
-    if (difference <= 0) return "Happy 2028!";
+    if (difference <= 0) return "🎉 Happy 2028! 🎉";
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
     
-    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    return `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
   }
 
   const rollDice = () => {
@@ -90,8 +90,8 @@ function App() {
         <img src="/fish.jpg" alt="Fish" className="fish left-to-right" />
         <img src="/fish.jpg" alt="Fish" className="fish right-to-left" />
       </div>
-      <div style={{ marginTop: "20px", fontSize: "18px", fontWeight: "bold" }}>
-         {timeLeft}
+      <div style={countdownStyle}>
+        Countdown to 2028: <span style={countdownTextStyle}>{timeLeft}</span>
       </div>
     </div>
   );
@@ -119,6 +119,23 @@ const buttonStyle = {
   color: "#fff",
   border: "none",
   borderRadius: "5px",
+};
+
+const countdownStyle = {
+  marginTop: "30px",
+  fontSize: "20px",
+  fontWeight: "bold",
+  padding: "10px",
+  borderRadius: "10px",
+  backgroundColor: "#222",
+  color: "#fff",
+  display: "inline-block",
+};
+
+const countdownTextStyle = {
+  fontSize: "24px",
+  fontWeight: "bold",
+  color: "#ffcc00",
 };
 
 export default App;
