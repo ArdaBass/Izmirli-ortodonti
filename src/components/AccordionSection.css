@@ -89,9 +89,9 @@
 }
 
 .accordion-image {
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
-  margin: 1rem;
+  margin: 1rem auto;
   border-radius: 0.5rem;
   display: block;
 }
@@ -99,11 +99,13 @@
 .accordion-image.left {
   float: left;
   margin-right: 1.5rem;
+  max-width: 50%;
 }
 
 .accordion-image.right {
   float: right;
   margin-left: 1.5rem;
+  max-width: 50%;
 }
 
 .accordion-content::after {
@@ -151,4 +153,25 @@
   margin: 0;
   color: #374151;
   line-height: 1.6;
+}
+
+/* ✅ Responsive layout */
+@media screen and (max-width: 768px) {
+  .accordion-image.left,
+  .accordion-image.right {
+    float: none;
+    margin: 1rem auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  .accordion-subtitle {
+    text-align: center;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .accordion-content {
+    padding: 1rem;
+  }
 }
