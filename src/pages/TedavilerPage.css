@@ -1,0 +1,49 @@
+/* Page Container */
+.tedaviler-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+/* Banner Layout */
+.banner-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.banner-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 1rem;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+/* Title overlay */
+.tedavi-title {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  padding: 0.6rem 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 74, 173, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Divider above accordion */
+.tedaviler-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #dbeafe, transparent);
+  margin: 2rem auto 2.5rem;
+  max-width: 600px;
+}

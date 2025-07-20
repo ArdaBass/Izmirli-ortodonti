@@ -1,0 +1,33 @@
+/* MainPage.css */
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f8ff; /* same blueish background */
+}
+
+
+/* Ensure each section has some spacing */
+.main-page > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Optional spacing between sections */
+.gallery-slider {
+  margin-bottom: 0;
+}
+
+.hero-info-grid {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.doctors-section {
+  margin: 40px 0;
+}
+
+footer {
+  margin-top: auto;
+}

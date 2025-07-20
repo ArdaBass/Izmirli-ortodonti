@@ -1,0 +1,45 @@
+/* components/Footer.css */
+.footer {
+  background-color: #005a8d;
+  color: white;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-info h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.footer-info p,
+.footer-info a {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-map {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+  font-size: 14px;
+}

@@ -1,0 +1,25 @@
+/* components/Hero.css */
+.hero {
+  height: 60vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.hero-text {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  color: #005a8d;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  color: #333;
+}
