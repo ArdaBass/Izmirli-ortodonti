@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import "./DoctorsSection.css";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +18,7 @@ const defaultDoctors = [
   {
     id: "ayşe1",
     name: "Dt. Begüm Evrenol",
-    role: "2027",
+    role: "2027", // Will be replaced by countdown
     image: null
   },
   {
@@ -43,6 +42,7 @@ function DoctorsSection({ doctors = defaultDoctors, onDoctorClick }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [begumCountdown, setBegumCountdown] = useState("");
 
   const handleClick = (doctor) => {
     if (onDoctorClick) {
@@ -52,28 +52,26 @@ function DoctorsSection({ doctors = defaultDoctors, onDoctorClick }) {
     }
   };
 
- const handleScroll = () => {
-  const container = scrollContainer.current;
-  if (!container) return;
+  const handleScroll = () => {
+    const container = scrollContainer.current;
+    if (!container) return;
 
-  const scrollPosition = container.scrollLeft;
-  const cardWidth = container.offsetWidth;
-  const index = Math.round(scrollPosition / cardWidth);
-  setActiveDot(index);
-};
-
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.offsetWidth;
+    const index = Math.round(scrollPosition / cardWidth);
+    setActiveDot(index);
+  };
 
   const scrollToCard = (index) => {
-  const container = scrollContainer.current;
-  if (!container) return;
+    const container = scrollContainer.current;
+    if (!container) return;
 
-  const cardWidth = container.offsetWidth;
-  container.scrollTo({
-    left: index * cardWidth,
-    behavior: "smooth"
-  });
-};
-
+    const cardWidth = container.offsetWidth;
+    container.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth"
+    });
+  };
 
   const handleMouseDown = (e) => {
     const container = scrollContainer.current;
@@ -92,7 +90,7 @@ function DoctorsSection({ doctors = defaultDoctors, onDoctorClick }) {
     if (!container) return;
 
     const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 1.5; // Adjust drag speed
+    const walk = (x - startX) * 1.5;
     container.scrollLeft = scrollLeft - walk;
   };
 
@@ -110,6 +108,30 @@ function DoctorsSection({ doctors = defaultDoctors, onDoctorClick }) {
       container.addEventListener("scroll", handleScroll);
       return () => container.removeEventListener("scroll", handleScroll);
     }
+  }, []);
+
+  useEffect(() => {
+    const targetDate = new Date("2027-07-01T00:00:00");
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        setBegumCountdown("🥳 Mezun oldu!");
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const years = Math.floor(days / 365);
+      const months = Math.floor((days % 365) / 30);
+      const remainingDays = days - (years * 365 + months * 30);
+
+      setBegumCountdown(`${years} yıl ${months} ay ${remainingDays} gün kaldı`);
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000 * 60 * 60); // update hourly
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -138,7 +160,9 @@ function DoctorsSection({ doctors = defaultDoctors, onDoctorClick }) {
             </div>
             <div className="doctor-info">
               <p className="doctor-name">{doc.name}</p>
-              <span className="doctor-role">{doc.role}</span>
+              <span className="doctor-role">
+                {doc.name.includes("Begüm") ? begumCountdown : doc.role}
+              </span>
             </div>
           </div>
         ))}

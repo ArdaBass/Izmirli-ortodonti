@@ -33,27 +33,24 @@ const infoBoxes = [
   {
     icon: "/tooth1.png",
     title: "Braketlerle İlk Gün",
-    description:
-      "Braket takmanın en zor kısmı ilk bir haftadır. İnsan ağzındaki bir tüy parçasını bile hissedip çıkarmaya...",
+    description: "İlk hafta uyum süreci biraz zordur, sabırlı olun.",
   },
   {
     icon: "/tooth2.png",
     title: "Braketlilere Özel",
-    description:
-      "Ortodontik tedavi, hasta ve doktorun uyum içinde çalışması ile yürütülebilecek bir tedavidir...",
+    description: "Tedavi süreci, hasta-doktor uyumuyla başarıya ulaşır.",
   },
   {
     icon: "/tooth3.png",
     title: "Görünmeyen Teller",
-    description:
-      "Sabit tedavinin bir şeklidir. Braketler dişlerin ön yüzlerine değil, iç yüzlerine yapıştırılır...",
+    description: "Teller dişin iç yüzeyine yerleştirilir, dışarıdan görünmez.",
   },
   {
     icon: "/tooth4.png",
     title: "Mini İmplantlar",
-    description:
-      "Ortodontik tedavi sırasında her çekme ve itme hareketine yani aksiyona dişlerden...",
+    description: "Diş hareketlerini yönlendirmek için destek sağlar.",
   },
 ];
+
 
 export default Hero;

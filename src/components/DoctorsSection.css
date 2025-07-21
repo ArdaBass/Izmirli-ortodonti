@@ -1,5 +1,5 @@
 .doctors-section {
-  padding: 40px 20px;
+  padding: 24px 20px; /* ⬅️ reduced from 40px */
   max-width: 1200px;
   margin: auto;
   font-family: 'Segoe UI', sans-serif;
@@ -10,7 +10,7 @@
   font-weight: 700;
   color: #111;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 24px; /* ⬅️ reduced from 32px */
   border-left: 4px solid #009fe3;
   padding-left: 12px;
 }
@@ -21,12 +21,12 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-padding: 0 20px;
-  padding: 0 20px 20px 20px;
-  gap: 0;
+  padding: 0 20px 16px 20px; /* ⬅️ less bottom padding */
+  gap: 16px; /* ⬅️ added spacing between cards */
   user-select: none;
   cursor: grab;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .doctor-cards:active {
@@ -97,7 +97,7 @@
 .dots-container {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .dot {
