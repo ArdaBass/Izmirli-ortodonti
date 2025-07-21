@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(135deg, #f5f9ff, #eaf6ff); /* MATCHING BACKGROUND */
+  background: linear-gradient(135deg, #f5f9ff, #eaf6ff); /* MATCHING BACKGROUNDwater: BACKGROUND */
   padding-bottom: 0;
   margin-bottom: 0;
 }
@@ -14,7 +14,6 @@
 }
 
 .info-box {
-  /* width: 240px; ❌ REMOVE this line */
   height: 280px;
   background: linear-gradient(145deg, #33aadd, #2a97c2);
   border-radius: 16px;
@@ -29,7 +28,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 0 1 240px; /* still limits desktop sizing */
 }
-
 
 .info-box:hover {
   transform: translateY(-8px);
@@ -83,16 +81,20 @@
     padding: 30px 10px;
     gap: 16px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .info-box {
-    width: calc(50% - 16px); /* half-width minus half the gap */
-    height: 200px;
+    flex: 0 1 calc(50% - 8px); /* 2x2 grid: half width minus half gap */
+    height: 220px; /* Increased height for better mobile balance */
     padding: 16px 10px;
+    box-sizing: border-box;
+    cursor: pointer; /* Make entire box clickable on mobile */
   }
 
   .info-box p {
-    display: none; /* Hide description text */
+    display: block; /* ✅ SHOW description again */
+    margin-top: 8px;
   }
 
   .info-box h4 {
@@ -107,10 +109,6 @@
   }
 
   .plus {
-    bottom: 12px;
-    width: 24px;
-    height: 24px;
-    font-size: 18px;
-    line-height: 20px;
+    display: none; /* Hide plus button on mobile */
   }
 }

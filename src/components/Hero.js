@@ -1,15 +1,23 @@
-// Hero.js
 import React from "react";
 import "./Hero.css";
 import GallerySlider from "./GallerySlider"; // 👈 Make sure this path is correct
 
 function Hero() {
+  const handleBoxClick = (title) => {
+    // Placeholder for click action; replace with desired functionality (e.g., navigation)
+    console.log(`Clicked box: ${title}`);
+  };
+
   return (
     <section className="hero" id="anasayfa">
       <GallerySlider />
       <div className="hero-info-boxes">
         {infoBoxes.map((box, index) => (
-          <div className="info-box" key={index}>
+          <div
+            className="info-box"
+            key={index}
+            onClick={() => handleBoxClick(box.title)}
+          >
             <img src={box.icon} alt={box.title} className="info-icon" />
             <h4>{box.title}</h4>
             <p>{box.description}</p>

@@ -1,4 +1,3 @@
-// InfoGrid.js
 import React from "react";
 import "./InfoGrid.css";
 import { FiTarget, FiAlertTriangle } from "react-icons/fi";
@@ -37,22 +36,27 @@ function InfoGrid() {
   return (
     <section className="info-grid">
       <div className="info-grid-container">
-        {infoItems.map((item, idx) => (
-          <div key={idx} className="info-card">
-            <div className="info-icon-square">{item.icon}</div>
-            <div className="info-content">
-              <h4>{item.title}</h4>
-              <p>{item.description}</p>
-            </div>
-            {item.link && (
-              <div className="info-card-arrow">
-                <a href={item.link}>
-                  <i className="fa-solid fa-arrow-right"></i>
-                </a>
+        {infoItems.map((item, idx) =>
+          item.link ? (
+            <a href={item.link} className="info-card-link" key={idx}>
+              <div className="info-card clickable">
+                <div className="info-icon-square">{item.icon}</div>
+                <div className="info-content">
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </a>
+          ) : (
+            <div className="info-card" key={idx}>
+              <div className="info-icon-square">{item.icon}</div>
+              <div className="info-content">
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          )
+        )}
       </div>
     </section>
   );

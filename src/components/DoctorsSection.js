@@ -18,8 +18,8 @@ const defaultDoctors = [
   },
   {
     id: "ayşe1",
-    name: "Dr. Ayşe Deniz",
-    role: "Pedodontist",
+    name: "Dt. Begüm Evrenol",
+    role: "2027",
     image: null
   },
   {
@@ -52,26 +52,28 @@ function DoctorsSection({ doctors = defaultDoctors, onDoctorClick }) {
     }
   };
 
-  const handleScroll = () => {
-    const container = scrollContainer.current;
-    if (!container) return;
+ const handleScroll = () => {
+  const container = scrollContainer.current;
+  if (!container) return;
 
-    const scrollPosition = container.scrollLeft;
-    const cardWidth = container.querySelector(".doctor-card")?.offsetWidth || 240;
-    const index = Math.round(scrollPosition / (cardWidth + 28)); // 28 is the gap
-    setActiveDot(index);
-  };
+  const scrollPosition = container.scrollLeft;
+  const cardWidth = container.offsetWidth;
+  const index = Math.round(scrollPosition / cardWidth);
+  setActiveDot(index);
+};
+
 
   const scrollToCard = (index) => {
-    const container = scrollContainer.current;
-    if (!container) return;
+  const container = scrollContainer.current;
+  if (!container) return;
 
-    const cardWidth = container.querySelector(".doctor-card")?.offsetWidth || 240;
-    container.scrollTo({
-      left: index * (cardWidth + 28),
-      behavior: "smooth"
-    });
-  };
+  const cardWidth = container.offsetWidth;
+  container.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth"
+  });
+};
+
 
   const handleMouseDown = (e) => {
     const container = scrollContainer.current;
