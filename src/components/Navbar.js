@@ -18,10 +18,13 @@ function Navbar() {
             <img src="/logo.png" alt="İzmirli Ortodonti Logo" />
           </Link>
         </div>
-        <div className="hamburger" onClick={toggleMobileMenu}>
-          <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
-          <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
-          <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
+        <div
+          className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
+          onClick={toggleMobileMenu}
+        >
+          <span className="bar top-bar"></span>
+          <span className="bar middle-bar"></span>
+          <span className="bar bottom-bar"></span>
         </div>
       </div>
 

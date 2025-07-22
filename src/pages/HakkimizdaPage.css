@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Georgia', serif;
+  box-sizing: border-box;
 }
 
 .hakkimizda-title {
@@ -50,6 +51,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   max-width: 1280px;
   width: 100%;
+  box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -82,6 +84,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .hakkimizda-description {
@@ -100,6 +103,7 @@
   width: 100%;
   font-family: 'Arial', sans-serif;
   transition: background 0.3s ease;
+  box-sizing: border-box;
 }
 
 .hakkimizda-description:hover {
@@ -111,6 +115,7 @@
   min-width: 260px;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .hakkimizda-form {
@@ -121,11 +126,22 @@
   max-width: 640px;
   width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .hakkimizda-form:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure DoctorsSection is always constrained */
+.hakkimizda-page .doctors-section {
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
 }
 
 /* Tablet */
@@ -189,6 +205,12 @@
 
   .hakkimizda-form {
     padding: 18px;
+  }
+
+  .hakkimizda-page .doctors-section {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 36px;
   }
 }
 

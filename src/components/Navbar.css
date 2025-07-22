@@ -32,6 +32,58 @@
   transform: scale(1.05);
 }
 
+/* HAMBURGER ICON */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 2.5px;
+  background-color: #005a8d;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.top-bar {
+  top: 8px;
+}
+
+.middle-bar {
+  top: 16px;
+}
+
+.bottom-bar {
+  top: 24px;
+}
+
+.hamburger.open .top-bar {
+  transform: rotate(45deg);
+  top: 16px;
+}
+
+.hamburger.open .middle-bar {
+  opacity: 0;
+}
+
+.hamburger.open .bottom-bar {
+  transform: rotate(-45deg);
+  top: 16px;
+}
+
+/* NAV LINKS */
+
 .nav-links {
   display: flex;
   gap: 40px;
@@ -82,39 +134,7 @@
   background-color: #0077b6;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  gap: 5px;
-  padding: 6px;
-  height: 36px;
-  width: 36px;
-  border: none;
-  background: transparent;
-}
-
-.hamburger .bar {
-  width: 24px;
-  height: 2px;
-  background-color: #005a8d;
-  border-radius: 2px;
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger.open .bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.hamburger.open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open .bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
+/* RESPONSIVE STYLES */
 
 @media (max-width: 768px) {
   .navbar {
@@ -136,7 +156,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0; /* 🔥 FIX: Remove excess vertical padding */
+    padding: 0;
     background: #ffffff;
     position: absolute;
     top: 100%;
@@ -152,13 +172,13 @@
   .nav-links li {
     width: 100%;
     text-align: center;
-    margin: 4px 0; /* 🔥 FIX: Reduce spacing between items */
+    margin: 4px 0;
   }
 
   .nav-links li a {
     font-size: 18px;
-    padding: 8px 0; /* 🔥 FIX: reduce padding */
-    display: inline-block; /* 🔥 FIX: prevents full-width block alignment that adds spacing */
+    padding: 8px 0;
+    display: inline-block;
     width: auto;
   }
 
@@ -172,7 +192,6 @@
   }
 }
 
-
 @media (max-width: 480px) {
   .navbar {
     padding: 10px 16px;
@@ -182,35 +201,8 @@
     font-size: 16px;
   }
 
-  .hamburger .bar {
+  .bar {
     width: 18px;
     height: 1.8px;
   }
-}
-
-/* Additional styling to separate navbar from content */
-.section-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #ffffff;
-  font-size: 48px;
-  font-weight: 700;
-  text-align: center;
-  z-index: 1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-image {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
